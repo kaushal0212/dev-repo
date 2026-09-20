@@ -1,0 +1,20 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches:
+      - preprod
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate application
+        run: |
+          echo "Checking application files..."
+          test -f app.html
+          echo "PR validation passed"

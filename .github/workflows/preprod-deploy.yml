@@ -20,9 +20,9 @@ jobs:
 
       - name: Trigger Playwright test repo
         run: |
-          curl -L \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.TEST_REPO_TOKEN }}" \
-            https://api.github.com/repos/kaushal0212/playwright-test-CI-CD/dispatches \
-            -d '{"event_type":"run-preprod-tests-Event"}'
+         curl -i -L \
+         -X POST \
+         -H "Accept: application/vnd.github+json" \
+         -H "Authorization: Bearer ${{ secrets.TEST_REPO_TOKEN }}" \
+         https://api.github.com/repos/kaushal0212/playwright-test-CI-CD/dispatches \
+         -d '{"event_type":"run-preprod-tests"}'
